@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "lint": "eslint --cache --format codeframe --ext js,json routes",
+    "lint": "eslint --cache --format codeframe --ext js,json index.js",
     "test:all": "CI=true npm run test && npm run lint",
     "test": "jest"
   },
   "dependencies": {
+    "@hapi/hapi": "^19.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "eslint-config-prettier": "^6.10.1",
@@ -21,8 +22,8 @@
     "eslint-plugin-react-hooks": "^3.0.0",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-unicorn": "^18.0.1",
-    "express": "~4.16.1",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "node": "^13.12.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.27.0",
