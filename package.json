@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "lint": "eslint --cache --format codeframe --ext js,json routes"
+    "lint": "eslint --cache --format codeframe --ext js,json routes",
+    "test:all": "CI=true npm run jest && npm run lint",
+    "test": "jest"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -31,6 +33,7 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "husky": "^4.2.5",
+    "jest": "^25.3.0",
     "prettier": "^2.0.4"
   },
   "husky": {
