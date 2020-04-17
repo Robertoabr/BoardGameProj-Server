@@ -1,7 +1,8 @@
 'use strict';
 
 // PG-promise setup
-const pgp = require('pg-promise')({
+
+const initializationOptions = {
   capSQL: true,
   error: (err, e) => {
     const ctx = {};
@@ -19,13 +20,13 @@ const pgp = require('pg-promise')({
 
     console.error(err, ctx);
   },
-});
+};
 
-// TODO: need to update this connection string
+const pgp = require('pg-promise')(initializationOptions);
+
+// TODO: need to make this connection string into an env variable
 const connectionString = 'postres://localhost:5432/boardgame_db';
 
 const db = pgp(connectionString);
 
-module.exports.pgp = pgp;
-module.exports.db = db;
-module.exports.getDb = () => db;
+module.exports = db;
