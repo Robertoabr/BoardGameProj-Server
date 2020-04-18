@@ -1,7 +1,6 @@
 'use strict';
 
 // PG-promise setup
-
 const initializationOptions = {
   capSQL: true,
   error: (err, e) => {
@@ -28,5 +27,7 @@ const pgp = require('pg-promise')(initializationOptions);
 const connectionString = 'postres://localhost:5432/boardgame_db';
 
 const db = pgp(connectionString);
+const queries = require('./sql-queries.js');
 
-module.exports = db;
+module.exports.db = db;
+module.exports.queries = queries;

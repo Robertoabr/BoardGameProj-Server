@@ -1,5 +1,5 @@
 'use strict';
-const db = require('./db');
+const { db, queries } = require('./db');
 const Hapi = require('@hapi/hapi');
 
 const init = async () => {
@@ -13,7 +13,7 @@ const init = async () => {
     path: '/test',
     handler: async (request, h) => {
       const dbReturn = await db
-        .any('SELECT * FROM users')
+        .any(queries.users.getAll)
         .then((rows) => {
           console.warn(rows);
           return rows;
