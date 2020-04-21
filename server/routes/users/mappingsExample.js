@@ -1,4 +1,4 @@
-const CURRENT_VERSION = 1;
+// const CURRENT_VERSION = 1;
 
 // /**
 //  * Map the API chart object to be what the database expects

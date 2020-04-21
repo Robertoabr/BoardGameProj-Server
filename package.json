@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start-dev": "nodemon index.js",
-    "lint": "eslint --cache --format codeframe --ext js,json index.js",
+    "start-dev": "cd server && nodemon server.js",
+    "lint": "eslint --cache --format codeframe --ext js,json server",
     "test:all": "CI=true npm run test && npm run lint",
     "test": "jest"
   },
