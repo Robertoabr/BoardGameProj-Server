@@ -26,13 +26,13 @@
 //   modifyResponseType,
 // } = require('../../../utilities');
 
-// // not sure what these tags do , need to look this up in hapi docs
+// // not sure what these tags do , I think this is for documentation
 // const tags = ['api', 'v1', 'charts'];
 
 // // building the final URL step by step
 // const chartsBaseUrl = `${baseUrl}/v1/charts`;
 
-// // export this big 'route object' as part of an array??? Look up in HAPI?
+// // export this big 'route object' as array with all other user route objs
 // module.exports = [
 //   {
 //     method: 'GET',
