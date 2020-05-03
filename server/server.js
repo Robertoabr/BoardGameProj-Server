@@ -1,4 +1,5 @@
 'use strict';
+require('dotenv').config({ path: '../.env' });
 const { db, queries } = require('../db');
 const Hapi = require('@hapi/hapi');
 

@@ -23,8 +23,7 @@ const initializationOptions = {
 
 const pgp = require('pg-promise')(initializationOptions);
 
-// TODO: need to make this connection string into an env variable
-const connectionString = 'postres://localhost:5432/boardgame_db';
+const connectionString = process.env.CONNECTION_STRING;
 
 const db = pgp(connectionString);
 const queries = require('./sql-queries.js');
