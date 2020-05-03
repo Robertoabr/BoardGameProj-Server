@@ -7,7 +7,7 @@ const { handleGet } = require('./methods/get');
 module.exports = [
   {
     method: 'GET',
-    path: '/test',
+    path: '/users',
     handler: handleGet,
   },
 ];

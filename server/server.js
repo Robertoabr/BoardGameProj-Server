@@ -2,6 +2,7 @@
 require('dotenv').config({ path: '../.env' });
 const { db, queries } = require('../db');
 const Hapi = require('@hapi/hapi');
+const Path = require('path');
 
 // init the server
 const startServer = async () => {
@@ -11,6 +12,11 @@ const startServer = async () => {
     router: {
       isCaseSensitive: true,
       stripTrailingSlash: false,
+    },
+    routes: {
+      files: {
+        relativeTo: Path.join(__dirname, '../../client/build/'),
+      },
     },
   });
 
@@ -29,6 +35,8 @@ const startServer = async () => {
   });
 
   // event listeners and plugins would go here
+  const plugins = [require('@hapi/inert')];
+  await server.register(plugins);
 
   // Authentication would go after (assuming auth relies on a plugin)
 
